@@ -1,4 +1,4 @@
-# GitHub Copilot Hands-on - lab setup
+# GitHub Copilot Jumpstart - lab setup
 
 These instructions will guide you through configuring a GitHub Codespaces environment that you can use to run the course labs. 
 If you prefer and if you know one of the other IDEs supported by Copilot, you can use that. But the instructions will reference the codespace version.
@@ -14,7 +14,7 @@ If you prefer and if you know one of the other IDEs supported by Copilot, you ca
 
 These steps **must** be completed prior to starting the actual labs.
 
-## 1. You can use the free version of Copilot for all but one or two items in the labs. If you want to signup for the Pro version, info on that is below.
+## 1. You can use the free version of Copilot for the items in the labs. If you want to signup for the Pro version, info on that is below.
 
 When signed into GitHub, click on your profile picture/icon in the upper right and either select [Copilot](https://github.com/github-copilot/signup) 
 
@@ -30,7 +30,7 @@ You can also find help there for using Copilot in other supported IDEs, set the 
 <br/><br/>
 ## 2. Create your own codespace to run the labs by clicking on the button below.
 </br></br>
-Click here -----> [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/skillrepos/copilot-hands-on?quickstart=1)
+Click here -----> [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/skillrepos/copilot-jumpstart?quickstart=1)
 </br></br>
 
 Then click on the option to create a new codespace.
@@ -48,7 +48,7 @@ After the codespace has started, open the labs document by going to the file tre
 This will open it up in a tab above your terminal. Then you can follow along with the steps in the labs. 
 Any command in the gray boxes is either code intended to be run in the console or code to be updated in a file.
 
-Labs doc: [Copilot Hands-on Labs](labs.md)
+Labs doc: [Copilot Jumpstart Labs](labs.md)
 
 ## 4. Set codespace timeout (optional but recommended)
 
