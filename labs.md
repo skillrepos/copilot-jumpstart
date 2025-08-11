@@ -1,7 +1,7 @@
-# Hands-on GitHub Copilot
-## Practical Tips and Best Practices
+# GitHub Copilot JumpStart
+## Accelerating your software development skills with Gen AI
 ## Session labs (codespace version)
-## Revision 1.19 - 08/11/25
+## Revision 1.01 - 08/11/25
 
 **Versions of dialogs, buttons, etc. shown in screenshots may differ from current version of Copilot**
 
@@ -285,130 +285,8 @@ What other conditions should I test?
 </br></br></br>
 
 
-**Lab 5 - YAML generation, API use, translating code and the 2023 problem**
-
-**Purpose: In this lab, we’ll learn about how to have Copilot help with YAML generation, API usage, translating code and explore the 2023 problem.**
-
-1. Create a new file - **deployment.yaml**
-
-```
-code deployment.yaml
-```
-
-2. Bring up the Copilot Chat dialog via your keyboard shortcut and enter in the following request.
-
-```
-write spec for deployment in Kubernetes with 2 replicas and image from busybox
-add command to run in containers: sleep 3600
-add label app: myapp
-add label type: front-end
-```
-
-3. After a few moments, you should see it respond with the code. You can just Accept this.
-   
-![Kubernetes manifest](./images/cdd259.png?raw=true "Kubernetes manifest")
-<br><br>
-
-4. Suppose we don't know how to execute this code. Let's ask Copilot. Highlight the generated YAML in the deployment.yaml file.  Then go to the larger Chat interface and ask it. Put the following in the Chat interface.
-
-```
-How do I execute this?
-```
-
-5. Copilot should respond with something like the following:
-
-![How to execute deployment](./images/cdd188.png?raw=true "How to execute deployment")
-
-
-6. While we're in the Chat interface, let's ask it for the latest K8s version. Put the following into the dialog.
-
-```
-what is the latest Kubernetes version?
-```
-
-7. Depending on the current model selected, you may get varying answers. In the case shown, the AI suggests that as of the current date, the current version is 1.28. The challenge with this is that the current version is actually 1.33 (as of 5/13/25). This highlights the out-of-date issue with the LLM.
-
-![Answer to latest K8s version](./images/cdd244.png?raw=true "Answer to latest K8s version")
-
-
-8. Let's have Copilot generate some code to work with Kubernetes through the API. In the chat interface, enter the following.
-
-```
-How do I call the K8s API for scaling a deployment to 5 replicas with Python?
-```
-9. The results may tell us that we first need to make sure something like PIP is installed. If so, we don't need to worry about this at the moment. Go to the actual generated code in the chat output. Click in that output area and paste the code into a new file via clicking on the "..." and then the *Insert into new file* menu option.
-
-![Add code to new file](./images/cdd190.png?raw=true "Add code to new file")
-
-
-10. Suppose we change our mind and want to convert this code to Go. Click in the new file, and highlight the new code. Then, in the Chat interface tell it to translate to Go. Then, look in the separate chat output and you should see the equivalent Go code available.
-
-```
-translate to Go 
-```
-![Go translation](./images/cdd260.png?raw=true "Go translation")
-
-<p align="center">
-**[END OF LAB]**
-</p>
-</br></br></br>
     
-**Lab 6 - Teaching Copilot about updates**
-
-**Purpose: In this lab, we’ll see an example of what to do when Copilot does not have the most up-to-date information**
-
-1. Create a new file called *explore.go* via the same approach as you used to create other files.
-
-2. This file should now be open in an editor tab. Let's say we want to seed a random number generator with Go. Let's ask Copilot to write a function to do that. Prompt it through the inline chat dialog interface using the statement below. Then you can accept the suggested code.
-
-```
-write a function to seed a random number generator
-```
-![Asking Copilot to write function to seed a random number generator](./images/cdd117.png?raw=true "Asking Copilot to write function to seed a random number generator") 
-
-3. Copilot has probably generated code using the rand.Seed function. The challenge is that as of Go 1.20, the Seed function is deprecated.  Ref: https://cs.opensource.google/go/go/+/refs/tags/go1.21.0:src/math/rand/rand.go;l=394
-
-4. Let's see if Copilot understands that this is deprecrated. We'll ask it via a query. Switch to the separate chat inferface and enter the query below.
-
-```
-Is the Seed function deprecated in Go?
-```
-
-5. Depending on various factors (model, etc.) Copilot may respond *no* or *yes* to this. If Copilot responded *no*, you'll see chat output like the first figure below. If Copilot responded with a *yes* answer, it would also include about how to fix the code as shown in the second figure below. This shows the disparity we may sometimes see between generated code suggestions and what the model actually *understands*. For our purposes here, we're going to use a different approach to help Copilot understand how to fix this. So don't update the current code from the chat output.
-
-![Is Seed function deprecated? no](./images/cdd243.png?raw=true "Is Seed function deprecated? no") 
-</br></br>
-![Is Seed function deprecated? yes](./images/cdd202.png?raw=true "Is Seed function deprecated? yes") 
-
-6. One way we can help Copilot understand language updates is by providing the context in our file. So let's start again. Delete the current content in the explore.go file. Now,let's provide Copilot some more direct context by copying in updated code examples. After deleting the code block from step 3, copy and paste in the following example of the replacement for the Seed deprecation into your explore.go file.  This is taken from pkg.go.dev/math/rand.
-
-```
-	// Create and seed the generator.
-	// Typically a non-fixed seed should be used, such as time.Now().UnixNano().
-	// Using a fixed seed will produce the same output on every run.
-	// r := rand.New(rand.NewSource(99))
-```
-
-7. Now, let's try the creation of the function again. Underneath the comments and code you just pasted, invoke the dialog via your keyboard shortcut and enter the statement below again.
-```
-write a function to seed a random number generator
-```
-
-8. This time, the code should be using the same format and NewSource function as you put in the file in step 6. You can just Accept the change. (If you don't see a complete function, but just a single line, try changing the prompt to be "write a complete function to seed a random number generator".
-
-![Updated random number gen code after including updated usage](./images/cdd119.png?raw=true "Updated random number gen code after including updated usage")
-
-9. After accepting the change, go ahead and save this file. In preparation for the next lab, open a new chat by clicking on the "+" sign in the upper right part of the chat pane. (Make sure you have clicked in the chat panel first.)
-
-![New chat](./images/cdd187.png?raw=true "New chat") 
-
-<p align="center">
-**[END OF LAB]**
-</p>
-</br></br></br>
-
-
-**Lab 7: Using Copilot's Agent Functionality to Implement a New Feature**
+**Lab 5: Using Copilot's Agent Functionality to Implement a New Feature**
 
 **Purpose: In this lab, we'll see how to use Copilot to automatically implement a feature request to our codebase.**
 
@@ -476,61 +354,8 @@ curl -i \
 </br></br></br>
 
 
-**Lab 8: Refactoring and Updating Code via Copilot Edits**
 
-**Purpose: In this lab, we'll see how to use Copilot Edits functionality to refactor targeted sets of code, both for efficiency and improvements.**
-
-1.  Open a new chat and change Copilot's mode to "Edit".
-
-![Change to Edit](./images/sdlc75.png?raw=true "Change to Edit")
-
-2. Now let's give the AI a targeted set of context to work with.  Add the 3 files from our app in the "app" directory (app/app.py, app/auth.py, and app/datastore.py) as context. You can do this in a couple of ways. You can drag and drop the files from the explorer file list on the left into the dialog area or you can use the "Add Context" button and select the files. (You may need to click on "Files and Folders" in the context picker dialog.) **If other files show up as context, you can click on them in the dialog and an "X" should show up to remove them. (Or you can close them if they're open in the current tab in the IDE.)**
-
-![Selecting files for context](./images/sdlc76.png?raw=true "Selecting files for context")
-![Add context](./images/sdlc45.png?raw=true "Add context")
-   
-3. Let's ask Copilot to refactor our selected files to be more efficient and add logging. Enter the prompt below and submit it.
-
-```
-Refactor the files to make them more efficient.
-Add logging for all endpoints. 
-```
-
-![Refactor prompts](./images/ac27.png?raw=true "Refactor prompts")
-
-4. After this runs, you will likely see output like the screenshot below. Copilot will analyze the targeted files and suggest changes for efficiency and to add logging.
-
-![Change suggestions](./images/ac28.png?raw=true "Change suggestions")
-
-5. You can go ahead and review the changes if you want, and then Keep or Undo. To do the final step (where we show the logging, you need to Keep those changes at least.) 
-
-6. Now, let's have Copilot review our current app code. Click on the *app.py* file and select all the code (either highlight it all or use CTRL+A). Then right-click and select *Copilot -> Review and Comment* from the menu.
-
-![Having Copilot review](./images/ac29.png?raw=true "Having Copilot review")
-   
-
-7. After this runs, if Copilot has items worth noting, it will add them inline. You can scroll through the code to find the items that Copilot identified, along with any suggested changes.  If you want to apply the change you can select the "Apply and Go to Next" button. If you want to skip the change, you can click on the "Discard and Go to Next" button. If you look in the *COMMENTS* panel at the bottom (next to *TERMINAL*), you'll see all the comments listed. **If there are several, for the sake of time, it's suggested you pick just a couple to really inspect and discard the others**.
-
-![Reviewing suggestions](./images/ac30.png?raw=true "Reviewing suggestions")
-
-
-8. (Optional) To show that the logging works, you can use the script we used previously in the "scripts" directory named use-app.sh. Running it now should cause INFO messages to be output to stderr. (Don't forget to make sure the app is running first in a separate terminal via *python app.py* If you hit errors running the app, it's possible that some edits could have affected the app code. If you hit errors, you can copy the error message, switch Chat to Agent mode, and paste the error and let Copilot try to fix it. 
-
-```
-../scripts/use-app.sh
-```
-
-![Logging events](./images/ac32.png?raw=true "Logging events")
-
-9. You can stop the server via CTRL-C.
-
- <p align="center">
-**[END OF LAB]**
-</p>
-</br></br></br>
-
-
-**Lab 9 - Copilot in GitHub**
+**Lab 6 - Copilot in GitHub**
 
 **Purpose: In this lab, we'll see how to use the integrated chat interface in GitHub.**
 
