@@ -222,7 +222,7 @@ Explain how I can run and see the functionality of #codebase.
 
 **Purpose: In this lab, we'll see some examples of having Copilot generate tests**
 
-1. Back in the codespace editor panes, switch to the *prime.py* file we were using in Lab 2. Position the cursor below the code.
+1. Back in the codespace editor panes, make sure the *prime.py* file we were using in Lab 2 is the active/selected one. Position the cursor below the code.
 <br><br>
 
 2. Enter a comment to create unit tests
@@ -251,7 +251,7 @@ How do I test this code?
 
 5. After entering this, you should see a plan for testing the code in the Chat interface. Copilot will also populate a file for you with the proposed test code, and then want you to *Save As* a valid filename. You can just enter *test_prime.py* in the dialog and hit *OK*.
 
-![testing explanation](./images/cdd236.png?raw=true "testing explanation") 
+![testing explanation](./images/cdd268.png?raw=true "testing explanation") 
 <br><br>
 6. You can then click on the new *test_prime.py* file in the list on the left and open it up to see the contents.
 
@@ -356,7 +356,10 @@ Referencing the issue at https://github.com/skillrepos/copilot-adv/issues/1, pro
 
 <br><br>
 
-8. After Copilot processes the prompt, it may show one or two files changed - *app.py* and perhaps *datastore.py* - in a box above the Chat text entry area. Click on the "+ -"  icon on the right of the "2 files changed" area in the dialog. (See figure below).  
+8. After Copilot processes the prompt, it may show one or two files changed - *app.py* and perhaps *datastore.py* - in a box above the Chat text entry area. Click on the "+ -"  icon on the right of the "2 files changed" area in the dialog. (See figure below).
+
+
+(**NOTE**: If Copilot instead just creates a plan, but doesn't make the changes automatically, it make ask you if it's ok to proceed. If so, just type a message in the chat interface to tell it to proceed/continue.)
 
 ![View all edits](./images/ac24.png?raw=true "View all edits")
 
