@@ -31,7 +31,7 @@ Click here -----> [![Open in GitHub Codespaces](https://github.com/codespaces/ba
 
 Then click on the option to create a new codespace.
 
-![Creating new codespace from button](./images/cpho2.png?raw=true "Creating new codespace from button")
+![Creating new codespace from button](./images/cdd267.png?raw=true "Creating new codespace from button")
 
 **This will run for several minutes while it gets everything ready.**
   
