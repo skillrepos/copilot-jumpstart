@@ -1,7 +1,7 @@
 # GitHub Copilot JumpStart
 ## Accelerating your software development skills with Gen AI
 ## Session labs (codespace version)
-## Revision 1.01 - 08/11/25
+## Revision 1.10 - 08/20/25
 
 **Versions of dialogs, buttons, etc. shown in screenshots may differ from current version of Copilot**
 
