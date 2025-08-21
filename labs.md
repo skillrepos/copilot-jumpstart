@@ -169,7 +169,6 @@ simplify
 cat app/<filename>
 ```
 
-![cd](./images/ac4.png?raw=true "cd")
 <br><br>
 
 2. Since this is a new project to us, let's have Copilot produce some "onboarding" documentation for us. We'll use the #codebase chat variable to indicate it should do this against the contents of the current project. Enter the following prompt in the Copilot Chat dialog box and then submit it or hit *Enter*. (If you see a momentary flash about "Sign in to access Copilot", just wait till the dialog returns and enter the prompt again.)
