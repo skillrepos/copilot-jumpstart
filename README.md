@@ -1,4 +1,4 @@
-# GitHub Copilot JumpStart - lab setup
+# GitHub Copilot Jumpstart - lab setup
 
 These instructions will guide you through configuring a GitHub Codespaces environment that you can use to run the course labs. 
 If you prefer and if you know one of the other IDEs supported by Copilot, you can use that. But the instructions will reference the codespace version.
@@ -18,15 +18,11 @@ These steps **must** be completed prior to starting the actual labs.
 
 When signed into GitHub, click on your profile picture/icon in the upper right and either select [Copilot](https://github.com/github-copilot/signup) 
 
-![Signing up for Copilot](./images/cdd70.png?raw=true "Signing up for Copilot")
-
 **OR** select [Settings->Copilot](https://github.com/settings/copilot) and sign up.
-
-![Signing up for Copilot](./images/cdd32.png?raw=true "Signing up for Copilot")
 
 You can also find help there for using Copilot in other supported IDEs, set the switch for whether or not to allow matching public code suggestions, etc.
 
-![Using Copilot options](./images/cdd31.png?raw=true "Using Copilot options")
+
 <br/><br/>
 ## 2. Create your own codespace to run the labs by clicking on the button below.
 </br></br>
